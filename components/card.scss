@@ -1,0 +1,79 @@
+.container {
+    padding: 2px;
+}
+
+.title {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+.subtitle {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: 200;
+    font-size: 14pt;
+}
+
+.description {
+    line-height: 1.5;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.row .align-start {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.row .align-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+img {
+    height: 400px;
+    width: 300px;
+}
+
+.card {
+    perspective: 150rem;
+    position: absolute;
+    height: 100%;
+    margin: 2rem;
+}
+
+.card-side {
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    border: 1px solid #eaeaea;
+    width: 300px;
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+.card-side.back {
+    transform: rotateY(-180deg);
+    background-color: transparent;
+}
+
+.card-side.front {
+    background-color: transparent;
+}
+
+.card:hover .card-side.front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .card-side.back {
+    transform: rotateY(0deg);
+}
+
