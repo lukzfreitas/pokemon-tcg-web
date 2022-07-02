@@ -51,8 +51,8 @@ const CardFront = ({ title, subtitle, imageUrl, description, button1, button2, b
                     <p>{description}</p>
                 </div>
                 <div className="row">
-                    <div className="align-start">                        
-                        <Button primary size="small" onClick={button1.action} label={button1.title} />
+                    <div className="align-start">
+                        <Button primary size="small" onClick={() => onclick()} label={button1.title} />
                     </div>
                     <div className="align-end">
                         <Button primary size="small" onClick={button2.action} label={button2.title} />
@@ -62,6 +62,13 @@ const CardFront = ({ title, subtitle, imageUrl, description, button1, button2, b
             </div>
         </div>
     );
+
+    function onclick() {
+        const cardFront: any = document.querySelector('.card-side.front');
+        const cardBack: any = document.querySelector('.card-side.back');
+        cardFront.style.transform = 'rotateY(180deg)';
+        cardBack.style.transform = 'rotateY(0deg)';
+    }
 }
 
 const CardBack = ({ }) => {

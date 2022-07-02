@@ -62,18 +62,11 @@ img {
 
 .card-side.back {
     transform: rotateY(-180deg);
-    background-color: transparent;
+    background-color: white;
 }
 
 .card-side.front {
-    background-color: transparent;
+    background-color: white;
 }
 
-.card:hover .card-side.front {
-    transform: rotateY(180deg);
-}
-
-.card:hover .card-side.back {
-    transform: rotateY(0deg);
-}
 
