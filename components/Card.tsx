@@ -7,12 +7,21 @@ interface CardProps {
     subtitle?: string;
     imageUrl?: string;
     description?: string;
-    button1: { title: string, action?: () => void },
-    button2: { title: string, action?: () => void },
-    button3: { title: string, action?: () => void },
+    attacks?: any[];
+    weaknesses?: any[],
+    retreatCost?: any[]
 }
 
-export const Card = ({ title, subtitle, imageUrl, description, button1, button2, button3 }: CardProps) => {
+
+export const Card = ({
+    title,
+    subtitle,
+    imageUrl,
+    description,
+    attacks,
+    weaknesses,
+    retreatCost
+}: CardProps) => {
     return (
         <div className="card">
             <div className="card-side front">
@@ -21,45 +30,39 @@ export const Card = ({ title, subtitle, imageUrl, description, button1, button2,
                     subtitle={subtitle}
                     imageUrl={imageUrl}
                     description={description}
-                    button1={button1}
-                    button2={button2}
-                    button3={button3}
                 />
             </div>
             <div className="card-side back">
-                <CardBack />
+                <CardBack
+                    attacks={attacks}
+                    weaknesses={weaknesses}
+                    retreatCost={retreatCost}
+                />
             </div>
         </div>
     );
 };
 
 
-const CardFront = ({ title, subtitle, imageUrl, description, button1, button2, button3 }: CardProps) => {
+const CardFront = ({ title, subtitle, imageUrl, description }: CardProps) => {
     return (
-        <div>
+        <div className="content">
             <div>
                 <img src={imageUrl} alt={title} />
             </div>
-            <div className="container">
-                <div className="title">
-                    {title}
-                </div>
-                <div className="subtitle">
-                    {subtitle}
-                </div>
-                <div className="description">
-                    <p>{description}</p>
-                </div>
-                <div className="row">
-                    <div className="align-start">
-                        <Button primary size="small" onClick={() => onclick()} label={button1.title} />
-                    </div>
-                    <div className="align-end">
-                        <Button primary size="small" onClick={button2.action} label={button2.title} />
-                        <Button primary size="small" onClick={button3.action} label={button3.title} />
-                    </div>
-                </div>
+            <div className="title">
+                {title}
             </div>
+            <div className="subtitle">
+                {subtitle}
+            </div>
+            <div className="description">
+                <p>{description}</p>
+            </div>
+            <div className="button front">
+                <Button primary size="small" onClick={() => onclick()} label="Details" />
+            </div>
+
         </div>
     );
 
@@ -71,15 +74,46 @@ const CardFront = ({ title, subtitle, imageUrl, description, button1, button2, b
     }
 }
 
-const CardBack = ({ }) => {
+const CardBack = ({ attacks, weaknesses, retreatCost }: CardProps) => {
     return (
-        <div>
-            <div>teste1</div>
-            <div>teste2</div>
-            <div>teste3</div>
-            <div>teste4</div>
-            <div>teste5</div>
-            <div>teste6</div>
+        <div className="content">
+            <div className="title">Attacks</div>
+            {attacks?.map(attack => {
+                return (
+                    <div className="detail">
+                        {attack}
+                        <hr></hr>
+                    </div>
+                )
+            })}
+            <div className="title">Weaknesses</div>
+            {weaknesses?.map(weakness => {
+                return (
+                    <div className="detail">
+                        {weakness}
+                        <hr></hr>
+                    </div>
+                )
+            })}
+            <div className="title">Retreat Cost</div>
+            {retreatCost?.map(cost => {
+                return (
+                    <div className="detail">
+                        {cost}
+                        <hr></hr>
+                    </div>
+                )
+            })}
+            <div className="button back">
+                <Button primary size="small" onClick={() => onclick()} label='Back' />
+            </div>
         </div>
     )
+
+    function onclick() {
+        const cardFront: any = document.querySelector('.card-side.front');
+        const cardBack: any = document.querySelector('.card-side.back');
+        cardFront.style.transform = 'rotateY(360deg)';
+        cardBack.style.transform = 'rotateY(180deg)';
+    }
 }

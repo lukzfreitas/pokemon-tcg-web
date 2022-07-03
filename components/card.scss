@@ -1,4 +1,4 @@
-.container {
+.content {
     padding: 2px;
 }
 
@@ -20,20 +20,25 @@
     text-align: justify;
 }
 
-.row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.detail {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-size: 12pt;
+    padding: 5px;
 }
 
-.row .align-start {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.row .align-end {
+.button.front {
     display: flex;
     justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;    
+}
+
+.button.back {    
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin: 2rem 1rem;
 }
 
 img {
@@ -55,9 +60,12 @@ img {
     border-radius: 5px;
     border: 1px solid #eaeaea;
     width: 300px;
+    min-height: 700px;
     transition: all 0.8s ease;
     backface-visibility: hidden;
     position: absolute;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-side.back {
@@ -68,5 +76,3 @@ img {
 .card-side.front {
     background-color: white;
 }
-
-
