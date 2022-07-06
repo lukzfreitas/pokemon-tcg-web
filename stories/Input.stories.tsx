@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 
-import { Input } from '../components/Input';
+import { Input } from '../components/input/Input';
 
 export default {
   title: 'Example/Input',
@@ -18,5 +18,9 @@ export const InputText = InputTemplate.bind({});
 
 InputText.args = {
   type: 'text',
-  value: 'Pikachu'   
+  value: 'Pikachu',
+  height: '20px',
+  width: '50%',
+  isError: true,
+  messageError: 'Required value'
 };

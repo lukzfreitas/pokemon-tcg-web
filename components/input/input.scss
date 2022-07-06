@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;    
+    padding: 10px;
+}
+
+
+.input {    
+    padding: 5px;
+    height: 20px;
+    width: 100%;
+    border: 2px solid rgb(226, 223, 223);
+    border-width: 1px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.input.error {
+    outline-color: rgb(187, 57, 57);
+    border: 2px solid rgb(187, 57, 57);
+    border-radius: 6px;
+}
+
+.input.sucess {
+    outline-color: #719ece;
+}
+
+.message-error {
+    padding: 5px;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    animation: slow 3s;
+    animation-fill-mode: forwards;
+    color: rgb(187, 57, 57);
+}
+
+@keyframes slow {
+    from {
+        max-height: 0px;
+    }
+    to {
+        max-height: 100px;
+    }
+}
