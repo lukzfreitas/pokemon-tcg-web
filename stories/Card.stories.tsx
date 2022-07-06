@@ -12,9 +12,9 @@ export default {
   },
 } as ComponentMeta<typeof Card>;
 
-const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
+const PokemonTemplate: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
-export const Pikachu = Template.bind({});
+export const Pikachu = PokemonTemplate.bind({});
 Pikachu.args = {
   title: 'Pikachu',
   subtitle: 'Thunder',
