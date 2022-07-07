@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 
-import { Input } from '../components/input/Input';
+import Input from '../components/input/Input';
 
 export default {
   title: 'Example/Input',

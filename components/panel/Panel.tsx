@@ -4,6 +4,7 @@ import './panel.scss'
 interface PanelProps {
     height: string;
     width: string;
+    children: any;
 }
 
 export function Panel(props: PanelProps) {
@@ -17,7 +18,7 @@ export function Panel(props: PanelProps) {
 
     return (
         <div className="panel" style={{ height: height, width: width }}>
-            
+            {props.children}
         </div>
     );  
 }

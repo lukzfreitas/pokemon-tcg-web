@@ -2,26 +2,34 @@ import { useEffect, useState } from "react";
 import './input.scss';
 
 export interface InputProps {
-    value: string;
-    placeholder: string;
-    disabled: boolean;
-    type: string;
-    maxLength: number;
-    minLength: number;
-    height: string;
-    width: string;
-    isError: boolean;
-    messageError: string;
-    onChangeValue: Function;
-    onKeyPress: Function;
-    onKeyDown: Function;
+    value?: string;
+    type?: string;
+    placeholder?: string;
+    disabled?: boolean;
+    maxLength?: number;
+    minLength?: number;
+    height?: string;
+    width?: string;
+    isError?: boolean;
+    messageError?: string;
+    onChangeValue?: Function;
+    onKeyPress?: Function;
+    onKeyDown?: Function;
 }
 
-export function Input(props: InputProps) {
+const Input = ({
+    type = 'text',
+    height = '20px',
+    width = '100%',
+    isError = false,
+    onChangeValue = () => {},
+    onKeyPress = () => {},
+    onKeyDown = () => {},
+    ...props }: InputProps) => {
 
     const [value, setValue] = useState(props.value);
 
-    const [isError, setError] = useState(props.isError);
+    const [isErrorState, setError] = useState(isError);
 
     const [messageError, setMessageError] = useState(props.messageError);
 
@@ -37,7 +45,7 @@ export function Input(props: InputProps) {
         setValue(props.value);
         setPlaceholder(props.placeholder);
         setDisabled(props.disabled);
-        setError(props.isError);
+        setError(isErrorState);
         setMessageError(props.messageError);
         setMaxLength(props.maxLength);
         setMinLength(props.minLength);
@@ -45,15 +53,15 @@ export function Input(props: InputProps) {
 
     const handleChangeValue = (event: any) => {
         setValue(event.target.value);
-        props.onChangeValue(value);
+        onChangeValue(value);
     };
 
     const handleKeyPress = (event: any) => {
-        props.onKeyPress(event);
+        onKeyPress(event);
     }
 
     const handleKeyDown = (event: any) => {
-        props.onKeyDown(event);
+        onKeyDown(event);
     }
 
     return (
@@ -64,8 +72,8 @@ export function Input(props: InputProps) {
                 disabled={disabled}
                 maxLength={maxLength}
                 minLength={minLength}
-                type={props.type}
-                style={{ height: props.height, width: props.width }}
+                type={type}
+                style={{ height: height, width: width }}
                 className={isError ? 'input error' : 'input sucess'}
                 onChange={e => handleChangeValue(e)}
                 onKeyPress={e => handleKeyPress(e)}
@@ -80,5 +88,5 @@ export function Input(props: InputProps) {
     }
 }
 
-
+export default Input;
 

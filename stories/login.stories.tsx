@@ -1,20 +1,17 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-
-import { Input } from '../components/input/Input';
-import Login from '../pages/login/login';
+import Login from '../components/login/login';
 
 export default {
   title: 'Example/Login',
-  component: Input,
+  component: Login,
   parameters: {
     layout: 'fullscreen',
   },
 } as ComponentMeta<typeof Login>;
 
-const InputTemplate: ComponentStory<typeof Login> = (args) => <Input {...args} />;
+const LoginTemplate: ComponentStory<typeof Login> = (args) => <Login {...args} />;
 
-export const LoginExample = InputTemplate.bind({});
+export const LoginExample = LoginTemplate.bind({});
 
 LoginExample.args = {};
