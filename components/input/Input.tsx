@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import './input.scss';
 
 export interface InputProps {
     value: string;
+    placeholder: string;
+    disabled: boolean;
     type: string;
+    maxLength: number;
+    minLength: number;
     height: string;
     width: string;
     isError: boolean;
@@ -21,9 +25,22 @@ export function Input(props: InputProps) {
 
     const [messageError, setMessageError] = useState(props.messageError);
 
+    const [placeholder, setPlaceholder] = useState(props.placeholder);
+
+    const [disabled, setDisabled] = useState(props.disabled);
+
+    const [maxLength, setMaxLength] = useState(props.maxLength);
+
+    const [minLength, setMinLength] = useState(props.minLength);
+
     useEffect(() => {
+        setValue(props.value);
+        setPlaceholder(props.placeholder);
+        setDisabled(props.disabled);
         setError(props.isError);
         setMessageError(props.messageError);
+        setMaxLength(props.maxLength);
+        setMinLength(props.minLength);
     })
 
     const handleChangeValue = (event: any) => {
@@ -43,6 +60,10 @@ export function Input(props: InputProps) {
         <div className="container">
             <input
                 value={value}
+                placeholder={placeholder}
+                disabled={disabled}
+                maxLength={maxLength}
+                minLength={minLength}
                 type={props.type}
                 style={{ height: props.height, width: props.width }}
                 className={isError ? 'input error' : 'input sucess'}
