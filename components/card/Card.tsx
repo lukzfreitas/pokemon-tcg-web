@@ -17,7 +17,7 @@ class Card extends React.Component<CardProps> {
 
     render(): React.ReactNode {
         return (
-            <div className="card">
+            <div className="card-pokemon">
                 <div className="card-side front">
                     <CardFront
                         title={this.props.title}

@@ -16,7 +16,7 @@ class CardBack extends React.Component<CardProps> {
     
     render(): React.ReactNode {
         return (
-            <div className="content">
+            <div>
                 <div className="title">Attacks</div>
                 {this.props.attacks?.map(attack => {
                     return (

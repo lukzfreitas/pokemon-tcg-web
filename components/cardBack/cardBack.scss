@@ -1,23 +1,7 @@
-.content {
-    padding: 2px;
-}
-
 .title {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-weight: bold;
     font-size: 20pt;
-}
-
-.subtitle {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-weight: 200;
-    font-size: 14pt;
-}
-
-.description {
-    line-height: 1.5;
-    font-size: 1rem;
-    text-align: justify;
 }
 
 .detail {
@@ -27,45 +11,10 @@
     padding: 5px;
 }
 
-.button.front {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;    
-}
-
-.button.back {    
-    position: fixed;
+.button.back {        
     left: 0;
     bottom: 0;
-    margin: 2rem 1rem;
-}
-
-img {
-    height: 400px;
-    width: 300px;
-}
-
-.card {
-    perspective: 150rem;
-    position: absolute;
-    height: 100%;
-    margin: 2rem;
-}
-
-.card-side {
-    margin: 1rem;
-    padding: 1rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    border: 1px solid #eaeaea;
-    width: 300px;
-    min-height: 700px;
-    transition: all 0.8s ease;
-    backface-visibility: hidden;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
+    margin: 5px;
 }
 
 .card-side.back {
