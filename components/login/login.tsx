@@ -1,7 +1,5 @@
-import Head from "next/head";
 import Input from "../../components/input/Input";
 import { Panel } from "../../components/panel/Panel";
-import styles from '../../styles/Home.module.css'
 import { Button } from "../button/Button";
 
 const Login: any = () => {

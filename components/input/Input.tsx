@@ -4,6 +4,7 @@ import './input.scss';
 export interface InputProps {
     value?: string;
     type?: string;
+    label?: string;
     placeholder?: string;
     disabled?: boolean;
     maxLength?: number;
@@ -66,6 +67,7 @@ const Input = ({
 
     return (
         <div className="container">
+            <Label></Label>
             <input
                 value={value}
                 placeholder={placeholder}
@@ -85,6 +87,10 @@ const Input = ({
 
     function MessageError() {
         return isError ? <span className="message-error">{messageError}</span> : null;
+    }
+
+    function Label() {
+        return <span className="label">{props.label}</span>
     }
 }
 

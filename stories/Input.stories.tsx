@@ -18,6 +18,7 @@ export const InputText = InputTemplate.bind({});
 
 InputText.args = {
   type: 'text',
+  label: 'input text',
   placeholder: 'Insert value',
   height: '20px',
   width: '50%',  
