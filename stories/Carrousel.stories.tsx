@@ -18,6 +18,7 @@ export const CarouselExample = CarouselTemplate.bind({});
 CarouselExample.args = {
   children: <Card title='Pikachu'
     subtitle='Thunder'
+    imageUrl='https://images.pokemontcg.io/dp2/94_hires.png'
     description="Once during your turn (before your attack), if Pichu is anywhere under Pikachu, you may search your discard pile for a Lightning Energy card, show it to your opponent, and put it into your hand. This power can't be used if Pikachu is affected by a Special Condition."
     attacks={['Growl', 'Thundershock']}
     weaknesses={['Fighting']}

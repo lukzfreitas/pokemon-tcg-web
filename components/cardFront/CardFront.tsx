@@ -17,9 +17,9 @@ class CardFront extends React.Component<CardProps>  {
     render(): React.ReactNode {
         return (
             <div>
-                {/* <div className="img">
+                <div className="img">
                     <img src={this.props.imageUrl} alt={this.props.title} />
-                </div> */}
+                </div>
                 <div className="title">
                     {this.props.title}
                 </div>

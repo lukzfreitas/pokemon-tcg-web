@@ -44,7 +44,7 @@ class CardBack extends React.Component<CardProps> {
                         </div>
                     )
                 })}
-                <div className="button back">
+                <div>
                     <Button primary size="small" onClick={() => onclick('rotateY(360deg)', 'rotateY(180deg)')} label='Back' />
                 </div>
             </div>

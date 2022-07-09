@@ -1,11 +1,10 @@
 .card-pokemon {
     perspective: 150rem;
     min-height: 700px;
-    position: relative;
+    margin: auto;
 }
 
-.card-side {
-    margin: 1rem;
+.card-side {    
     padding: 1rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -14,9 +13,5 @@
     height: 100%;
     transition: all 0.8s ease;
     backface-visibility: hidden;
-    position: absolute;
-    
-
-  
-
+    position: absolute;        
 }
